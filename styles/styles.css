@@ -46,6 +46,7 @@ aside {
     margin: 0 0 0 165px;
     top: -364px;*/
     float: left;
+    margin: -20px 0 0 165px;
 }
 
 menu {
@@ -100,7 +101,8 @@ aside div {
 
 .goodsWrapper {
     width: 870px;
-    overflow: hidden;
+    float: right;
+    margin: -20px 165px 0 0;
 }
 
 .goods {
@@ -112,6 +114,13 @@ aside div {
 
 .smallGoods {
     height: 400px;
+    margin: 46px 0 0 0;
+}
+
+.clear {
+    width: 1170px;
+    height: 30px;
+    clear: both; 
 }
 
 .socialWrapper {
@@ -119,6 +128,7 @@ aside div {
     height: 660px;
     margin: 0 auto;
     background-color: #eaeaea;
+    clear: both;
 }
 
 /*#newProducts, #topProducts, #saleProducts {
