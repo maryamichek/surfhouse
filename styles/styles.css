@@ -120,16 +120,16 @@ aside div {
 
 .clear {
     width: 1170px;
-    height: 25px;
+    /*height: 25px;*/
     clear: both; 
 }
 
 .socialWrapper {
     width: 1170px;
     height: 660px;
-    margin: 0 auto;
+    margin: 25px auto 0;
     background-color: #eaeaea;
-    clear: both;
+/*    clear: both;*/
 }
 
 /*#newProducts, #topProducts, #saleProducts {
