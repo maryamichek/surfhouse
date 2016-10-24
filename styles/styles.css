@@ -199,6 +199,8 @@ aside div p {
   /*// height: 30px;*/
   text-align: center;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
 .insta > div > p {
@@ -208,23 +210,15 @@ aside div p {
   font-weight: 900;
   font-style: italic;
   text-align: left;
-  margin: 0 0 0 3px;
+  margin: 0 0 0 8px;
   display: inline-block;
-  /*position: relative;
-  top: -7px;*/
 }
 
 .insta > div:nth-child(2) {
  /* // height: 185px;*/
   margin-top: 26px;
-}
-
-.insta > div:nth-child(2) > img:nth-child(2), 
-.insta > div:nth-child(2) > img:nth-child(3), 
-.insta > div:nth-child(2) > img:nth-child(4), 
-.insta > div:nth-child(2) > img:nth-child(5), 
-.insta > div:nth-child(2) > img:nth-child(6) {
-  margin-left: 0.6%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .headerLogo {
@@ -256,12 +250,6 @@ aside div p {
 
 .headerTextBlock {
   padding: 108px 274px 0 165px;
-/*  width: 313px;
-  height: 169px;
-  padding: 107px 0 0 913px;*/
-/*  position: relative;
-  left: 913px;
-  top: 107px;*/
 }
 .funride{
   width: 313px;
@@ -311,8 +299,6 @@ aside div p {
   color: #333;
   font-weight: 700;
   margin-top: 80px;
-  /*box-sizing: border-box;
-  margin: 0 0 0 165px;*/
 }
 
 .welcome p:nth-child(1) {
@@ -331,93 +317,55 @@ aside div p {
   font-style: italic;
 }
 
-/*#insta > div:nth-child(1) {
-  width: 300px;
-  margin: 0 auto;
-  position: relative;
-  top: 51px;
+.lowerFooter div {
+  width: 223px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 200px;
 }
 
-#insta > div:nth-child(2) {
-  width: 100%;
-  margin-top: 71px;
+.lowerFooter img {
+  margin-left: 15px;
 }
 
-#insta > div:nth-child(2) > img:nth-child(2), 
-#insta > div:nth-child(2) > img:nth-child(3), 
-#insta > div:nth-child(2) > img:nth-child(4), 
-#insta > div:nth-child(2) > img:nth-child(5), 
-#insta > div:nth-child(2) > img:nth-child(6) {
-  margin-left: 0.6%;
-}
-
-#insta > div:nth-child(2) > img:nth-child(1),
-#insta > div:nth-child(2) > img:nth-child(2), 
-#insta > div:nth-child(2) > img:nth-child(3), 
-#insta > div:nth-child(2) > img:nth-child(4), 
-#insta > div:nth-child(2) > img:nth-child(5), 
-#insta > div:nth-child(2) > img:nth-child(6) {
-  width: 15.8%;
-}
-
-#insta > div > p {
-  font-family: Roboto BlackItalic;
-  color:  #333333;
-  font-size: 22px;
-  font-weight: 900;
-  font-style: italic;
-  text-align: left;
-  margin: 0 0 0 3px;
-  display: inline-block;
-  position: relative;
-  top: -7px;
-}
-
-#insta > div > p > span {
-  font-size: 18px;
-}*/
-
-/*
-#lowerFooter p {
+.lowerFooter p {
   font-family: Roboto Regular;
   color:  #dad9d9;
   font-size: 12px;
   font-weight: 400;
   line-height: 21.6px;
   text-align: left;
-  position: relative;
+/*  position: relative;
   top: 20px;
-  left: 171px;
+  left: 171px;*/
 }
 
-#yellowLabel {
-  height: 300px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: #fff51f;
-  font-family: Raleway Bold; 
-  color: #333;
-  font-weight: 700;
-  box-sizing: border-box;
+.footerWrapper div {
+  display: inline-block;
 }
 
-#yellowLabel p:nth-child(1) {
-  padding: 60px 10px 10px 20px;
-  margin: 0px;
-  text-transform: uppercase;
-  font-size: 30px;
-  line-height: 30px;
-  text-align: left;
+.footerWrapper > div:nth-child(1) {
+  /*padding: 50px 0 0 35px;*/
+  width: 105px;
 }
 
-#yellowLabel p:nth-child(2) {
-  padding: 20px 10px 10px 20px;
-  margin: 0px;
-  font-size: 18px;
-  line-height: 14px;
-  text-align: left;
-  font-style: italic;
+.footerWrapper > div:nth-child(2) {
+/*  padding: 50px 0 0 114px;*/
+  width: 140px;
 }
+
+.footerWrapper > div:nth-child(3) {
+/*  padding: 50px 0 0 87px;*/
+  width: 120px;
+}
+
+/*#footerWrapper > div:nth-child(4) {
+  padding: 50px 0 0 87px;
+  width: 260px;
+}*/
+
+/*
+
 
 #newProducts > p, #topProducts > p, #saleProducts > p {
   font-family: Roboto BlackItalic;
@@ -672,30 +620,10 @@ footer form input[type="submit"] {
       margin: -10px 0 0 0;
 }
 
-#footerWrapper > div:nth-child(1) {
-  padding: 50px 0 0 35px;
-  width: 81px;
-}
-
 #footerWrapper > div:nth-child(1) > nav, 
 #footerWrapper > div:nth-child(2) > nav, 
 #footerWrapper > div:nth-child(3) > nav {
   padding: 26px 0 0 0;
-}
-
-#footerWrapper > div:nth-child(2) {
-  padding: 50px 0 0 114px;
-  width: 113px;
-}
-
-#footerWrapper > div:nth-child(3) {
-  padding: 50px 0 0 87px;
-  width: 108px;
-}
-
-#footerWrapper > div:nth-child(4) {
-  padding: 50px 0 0 87px;
-  width: 260px;
 }
 
 #footerWrapper > div:nth-child(5) {
@@ -768,17 +696,6 @@ footer form input[type="submit"] {
 
 #cards img:first-child {
   margin-left: 0px;
-}
-
-#lowerFooter > div {
-  width: 220px;
-  float: right;
-  margin-top: 20px;
-  margin-right: 200px;
-}
-
-#lowerFooter div img {
-  margin-left: 15px;
 }
 
 .corners > div {
