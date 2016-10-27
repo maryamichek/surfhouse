@@ -3,6 +3,60 @@
   padding: 0;
 }
 
+.font(@fontName; @urlName:@fontName; @weight:normal; 
+  @style:normal) {
+  font-family: '@{fontName}';
+  src: url('../fonts/@{fontName}/@{urlName}.ttf') format('truetype'),
+       url('../fonts/@{fontName}/@{urlName}.woff') format('woff'), 
+       url('../fonts/@{fontName}/@{urlName}.woff2') format('woff2');     
+  font-weight: @weight;
+  font-style: @style;
+}
+
+@roboto: 'Roboto';
+@robotoBlack: '@{roboto}-Black';
+@robotoBlackItalic: '@{robotoBlack}Italic';
+@robotoBold: '@{roboto}-Bold';
+@robotoRegular: '@{roboto}-Regular';
+
+@raleway: 'Raleway';
+@ralewayRegular: '@{raleway}-Regular';
+@ralewayBold: '@{raleway}-Bold';
+@ralewayExtraBold: '@{raleway}-ExtraBold';
+@ralewayHeavy: '@{raleway}-Heavy';
+
+@font-face {
+  .font(@roboto; @robotoBlack; 900);
+}
+
+@font-face {
+  .font(@roboto; @robotoBlackItalic; 900; italic);
+}
+
+@font-face {
+  .font(@roboto; @robotoBold; 700);
+}
+
+@font-face {
+  .font(@roboto; @robotoRegular; 400);
+}
+
+@font-face {
+  .font(@raleway; @ralewayRegular; 400);
+}
+
+@font-face {
+  .font(@raleway; @ralewayBold; 700);
+}
+
+@font-face {
+  .font(@raleway; @ralewayExtraBold; 800);
+}
+
+@font-face {
+  .font(@raleway; @ralewayHeavy; 800);
+}
+
 html, body {
   height: 100%;
 }
@@ -42,14 +96,13 @@ header {
 }
 
 .funride {
-  width: 313px;
   float: right;
 
   p {
 
     &:nth-child(1) {
       text-transform: uppercase;
-      font-family: Raleway ExtraBold;
+      font-family: @raleway; // не тот шрифт из-за того что болд и экстраболд идентичны 
       color: #fff51f;
       font-size: 48px;
       font-weight: 700;
@@ -58,7 +111,7 @@ header {
     }
 
     &:nth-child(2) {
-      font-family: Raleway Regular;
+      font-family: @raleway;
       color: #fff51f;
       font-size: 18px;
       font-weight: 400;
@@ -72,11 +125,10 @@ header {
     background-color: #fff51f;
     width: 124px;
     height: 49px;
-    font-family: Raleway Heavy;
+    font-family: @raleway; //не работает из-за ошибочного пути к файлу
     color: #000;
     font-size: 14px;
     font-weight: 800;
-    text-align: left;
     text-transform: uppercase;
     border-style: none;
     margin: 57px 0 0;
@@ -88,7 +140,7 @@ header {
   height: 300px;
   width: 270px;
   background-color: #fff51f;
-  font-family: Raleway Bold; 
+  font-family: @raleway; 
   color: #333;
   font-weight: 700;
   margin-top: 80px;
@@ -130,7 +182,7 @@ aside {
     margin: 30px 0 0 0; 
 
     p {
-      font-family: Raleway Heavy;
+      font-family: @raleway; //не работает
       color:  #333333;
       font-size: 36px;
       font-weight: 800;
@@ -147,7 +199,7 @@ menu {
   width: 100%;
   height: 475px;
   list-style: none;
-  font-family: Roboto Black;
+  font-family: @roboto; //выглядит иначе
   font-size: 14px;
   line-height: 36px;
   font-weight: 900;
@@ -203,7 +255,7 @@ menu {
   flex-direction: column; 
 
   & > p {
-    font-family: Roboto BlackItalic;
+    font-family: @roboto;
     color: #707070;
     font-size: 22px;
     font-weight: 900;
