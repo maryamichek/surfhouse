@@ -46,11 +46,11 @@
 }
 
 @font-face {
-  .font(@raleway; @ralewayBold; 700);
+  .font(@raleway; @ralewayBold; 600);
 }
 
 @font-face {
-  .font(@raleway; @ralewayExtraBold; 800);
+  .font(@raleway; @ralewayExtraBold; 700);
 }
 
 @font-face {
@@ -142,7 +142,7 @@ header {
   background-color: #fff51f;
   font-family: @raleway; 
   color: #333;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 80px;
 
   p {
@@ -190,6 +190,7 @@ aside {
       text-align: left;
       text-transform: uppercase;
       padding: 140px 0 0 140px;
+      font-style: italic;
     }
   }
 }
@@ -199,7 +200,7 @@ menu {
   width: 100%;
   height: 475px;
   list-style: none;
-  font-family: @roboto; //выглядит иначе
+  font-family: @roboto; 
   font-size: 14px;
   line-height: 36px;
   font-weight: 900;
@@ -315,7 +316,7 @@ menu {
 }
 
 .pictureTextTitle, .picturePrice {
-  font-family: Roboto BlackItalic;
+  font-family: @roboto; 
   color: #333;
   font-weight: 900;
   font-style: italic;
@@ -335,7 +336,7 @@ menu {
 }
 
 .pictureOldPrice {
-  font-family: Roboto BlackItalic;
+  font-family: @roboto; 
   color: #e24602;
   font-size: 14px;
   font-weight: 900;
@@ -350,7 +351,7 @@ menu {
   }
 
   p {
-    font-family: Roboto Regular;
+    font-family: @roboto; 
     font-size: 9px; 
     font-weight: 400;
     text-align: left;
@@ -414,7 +415,7 @@ menu {
     }
 
     & > p {
-      font-family: Roboto BlackItalic;
+      font-family: @roboto; 
       color: #333333;
       font-size: 22px;
       font-weight: 900;
@@ -476,7 +477,7 @@ footer {
       width: 180px;
       height: 30px;
       border: none;
-      font-family: Roboto Bold;
+      font-family: @roboto;
       color:  #333;
       font-size: 12px;
       font-weight: 700;
@@ -492,7 +493,7 @@ footer {
       height: 30px;
       border: none;
       box-sizing: border-box;
-      font-family: Roboto Regular;
+      font-family: @roboto;
       color:  #ffffff;
       font-size: 12px;
       line-height: 21px;
@@ -511,7 +512,7 @@ footer {
   width: 1100px;
   margin: 0 auto;
 
-  div {
+  .navWrapper {
     
     &:nth-child(1) {
       width: 105px;
@@ -555,7 +556,7 @@ footer {
   }
 
   p {
-    font-family: Roboto Regular;
+    font-family: @roboto; 
     color:  #dad9d9;
     font-size: 12px;
     font-weight: 400;
@@ -572,7 +573,7 @@ footer {
     margin-top: 30px;
 
     a {
-      font-family: Roboto Regular;
+      font-family: @roboto; 
       color: #fff;
       font-size: 12px;
       font-weight: 400;
@@ -584,7 +585,7 @@ footer {
 }
 
 .navTitle {
-  font-family: Raleway ExtraBold;
+  font-family: @raleway;
   color: #fff;
   font-size: 18px;
   font-weight: 700;
@@ -592,7 +593,7 @@ footer {
 }
 
 .emailInfo {
-  font-family: Roboto Regular;
+  font-family: @roboto;
   color: #f8f8f8;
   font-size: 12px; 
   font-weight: 400;
@@ -617,7 +618,7 @@ footer {
 }
 
 .aboutInfo {
-  font-family: Roboto Regular;
+  font-family: @roboto;
   color: #fff;
   font-size: 12px; 
   font-weight: 400;
@@ -637,7 +638,7 @@ footer {
 }
 
 .phoneEmailLabel {
-  font-family: Roboto Regular;
+  font-family: @roboto;
   color: #fff;
   font-size: 14px;
   font-weight: 400;
@@ -645,7 +646,7 @@ footer {
 }
 
 .phoneInfo {
-  font-family: Roboto Regular;
+  font-family: @roboto;
   color: #fff;
   font-size: 14px; 
   font-weight: 400;
@@ -653,7 +654,7 @@ footer {
 }
 
 .email {
-  font-family: Roboto Regular;
+  font-family: @roboto;
   color: #faef03;
   font-size: 14px; 
   font-weight: 400;
