@@ -1,12 +1,48 @@
 //Website colors
 
-@gray-lighten: #f8f8f8; //bcg of main content block
-@gray-light: #f6f6f6; //document bcg
-@gray-lightest: #eaeaea; //bcg of good cards, social block
-@gray: #e0e0e0; //bcg of aside block
-@gray-darken: #707070; //goods headers text
-@gray-dark: #373737; //footer bcg
-@gray-darkest: #333333; //small footer bcg, bcg of selected menu item, main text color
+@gray--lighten: #f8f8f8; //bg of main content block
+@gray--light: #f6f6f6; //document bg
+@gray--lightest: #eaeaea; //bg of good cards, social block
+@gray: #e0e0e0; //bg of aside block
+//@gray-darken: #707070; //goods headers text
+@gray--dark: #373737; //footer bg
+@gray--darkest: #333; //small footer bg, bg of selected menu item
+
+@color-main-text: #333;
+@color-secondary-text--light: #fff;
+@color-secondary-text--dark: #000;
+
+@color-header-bg: #abeafa; 
+@color-header-text: #fff51f;
+@color-header-btn-bg: @color-header-text;
+@color-header-btn-text: @color-secondary-text--dark;
+@color-header-welcome-block-bg: @color-header-text;
+
+@color-menu-bg: #26d2fc;
+@color-menu-text: @color-secondary-text--dark;
+@color-menu-selected-item-text: @color-secondary-text--light;
+@color-menu-selected-item-bg: @gray--darkest;
+@color-menu-header-bg: @gray--darkest;
+@color-menu-header-text: @color-secondary-text--light;
+
+@color-footer-text: @color-secondary-text--light;
+@color-footer-text-dark: #dad9d9;
+@color-footer-btn-text: @color-footer-text;
+@color-footer-btn-bg: #000;
+@color-footer-placeholder-bg: #fff51f;
+@color-footer-placeholder-text: @color-main-text;
+@color-footer-email-text: #faef03;
+
+@color-icon-facebook: #3b5997;
+@color-icon-twitter: #3fccfd;
+@color-icon-pinterest: #cb2027;
+
+@color-good-corner-new-bg: #e24602;
+@color-good-corner-hot-bg: #faef03;
+@color-good-corner-new-text: @color-secondary-text--light;
+@color-good-corner-hot-text: @color-secondary-text--dark;
+
+@color-old-price-text: #e24602;
 
 
 * {
@@ -73,7 +109,7 @@ html, body {
 }
 
 body {
-  background-color: @gray-light;
+  background-color: @gray--light;
 }
 
 main, header, footer, .lowerFooter {
@@ -83,7 +119,7 @@ main, header, footer, .lowerFooter {
 
 header {
   height: 700px;
-  background-color: #abeafa;
+  background-color: @color-header-bg;
 }
 
 .headerLogo {
@@ -133,10 +169,10 @@ header {
   }
 
   button {
-    background-color: #fff51f;
+    background-color: @color-header-btn-bg;
     width: 124px;
     height: 49px;
-    font-family: @raleway; //не работает из-за ошибочного пути к файлу
+    font-family: @raleway; 
     color: #000;
     font-size: 14px;
     font-weight: 800;
@@ -152,7 +188,7 @@ header {
   width: 270px;
   background-color: #fff51f;
   font-family: @raleway; 
-  color: #333;
+  color: @color-main-text;
   font-weight: 600;
   margin-top: 80px;
 
@@ -177,7 +213,7 @@ header {
 }
 
 main {
-  background-color: @gray-light;
+  background-color: @gray--light;
   height: 2317px;
 }
 
@@ -194,7 +230,7 @@ aside {
 
     p {
       font-family: @raleway; //не работает
-      color:  @gray-darkest;
+      color:  @gray--darkest;
       font-size: 36px;
       font-weight: 800;
       line-height: 36px;
@@ -207,7 +243,7 @@ aside {
 }
 
 menu {
-  background-color: #26d2fc;
+  background-color: @color-menu-bg;
   width: 100%;
   height: 475px;
   list-style: none;
@@ -221,10 +257,10 @@ menu {
   li {
     &:nth-child(1) {
       padding: 0 0 0 36px;
-      color: #fff; 
+      color: @color-menu-header-text; 
       height: 66px;
       line-height: 66px;
-      background-color: #333; 
+      background-color: @color-menu-header-bg; 
     }
   } 
 
@@ -235,11 +271,11 @@ menu {
     padding: 0 0 0 36px;
     box-sizing: border-box;
     text-decoration: none;
-    color: #000;
+    color: @color-menu-text;
 
     &:hover {
-      background-color: #333;
-      color: #fff;
+      background-color: @color-menu-selected-item-bg;
+      color: @color-menu-selected-item-text;
     }      
   }
 }
@@ -252,8 +288,7 @@ menu {
 
 .goods {
   width: 870px;
-  /*background-color: #f00;*/
-  background-color: @gray-lighten;
+  background-color: @gray--lighten;
   height: 760px;
   display: -webkit-flex;
   display: -moz-flex;
@@ -268,7 +303,7 @@ menu {
 
   & > p {
     font-family: @roboto;
-    color: @gray-darken;
+    color: @color-main-text;
     font-size: 22px;
     font-weight: 900;
     font-style: italic;
@@ -307,11 +342,11 @@ menu {
 .pictures {
   width: 270px;
   height: 320px;
-  background-color: #fff;
+  background-color: #fff; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 }
 
 .pictureIcon {
-  background-color: @gray-lightest;
+  background-color: @gray--lightest;
   width: 250px;
   height: 235px;
   margin: 10px auto 0;
@@ -328,7 +363,7 @@ menu {
 
 .pictureTextTitle, .picturePrice {
   font-family: @roboto; 
-  color: #333;
+  color: @color-main-text;
   font-weight: 900;
   font-style: italic;
 } 
