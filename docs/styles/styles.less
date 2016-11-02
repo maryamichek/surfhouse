@@ -1,57 +1,46 @@
-//Website colors
+//Basic colors
+@gray--lighten:                 #f8f8f8; //bg of main content block
+@gray--light:                   #f6f6f6; //document bg
+@gray--lightest:                #eaeaea; //bg of good cards, social block
+@gray:                          #e0e0e0; //bg of aside block
+@gray--dark:                    #373737; //footer bg
+@gray--darkest:                 #333;    //small footer bg, bg of selected menu item
 
-@gray--lighten: #f8f8f8; //bg of main content block
-@gray--light: #f6f6f6; //document bg
-@gray--lightest: #eaeaea; //bg of good cards, social block
-@gray: #e0e0e0; //bg of aside block
-@gray--dark: #373737; //footer bg
-@gray--darkest: #333; //small footer bg, bg of selected menu item
+//Document text colors
+@color-main-text:               #333;
+@color-secondary-text--light:   #fff;
+@color-secondary-text--dark:    #000;
 
-@color-main-text: #333;
-@color-secondary-text--light: #fff;
-@color-secondary-text--dark: #000;
-
-@color-header-bg: #abeafa; 
-@color-header-text: #fff51f;
-@color-header-btn-bg: @color-header-text;
-@color-header-btn-text: @color-secondary-text--dark;
+//Heder colors
+@color-header-bg:               #abeafa; 
+@color-header-text:             #fff51f;
+@color-header-btn-bg:           @color-header-text;
 @color-header-welcome-block-bg: @color-header-text;
 
-@color-menu-bg: #26d2fc;
-@color-menu-text: @color-secondary-text--dark;
-@color-menu-selected-item-text: @color-secondary-text--light;
-@color-menu-selected-item-bg: @gray--darkest;
-@color-menu-header-bg: @gray--darkest;
-@color-menu-header-text: @color-secondary-text--light;
+//Menu colors
+@color-menu-bg:                 #26d2fc;
 
-@color-footer-text: @color-secondary-text--light;
-@color-footer-text-dark: #dad9d9;
-@color-footer-btn-text: @color-footer-text;
-@color-footer-btn-bg: #000;
-@color-footer-placeholder-bg: #fff51f;
-@color-footer-placeholder-text: @color-main-text;
-@color-footer-email-text: #faef03;
+//Footer colors
+@color-footer-text:             @color-secondary-text--light;
+@color-footer-text--dark:       #dad9d9;
+@color-footer-btn-bg:           #000;
+@color-footer-placeholder-bg:   #fff51f;
+@color-footer-email-text:       #faef03;
 
-@color-icon-facebook: #3b5997;
-@color-icon-twitter: #3fccfd;
-@color-icon-pinterest: #cb2027;
-@color-brand-block-bg: #fff;
+//Icon colors
+@color-icon-facebook:           #3b5997;
+@color-icon-twitter:            #3fccfd;
+@color-icon-pinterest:          #cb2027;
+@color-brand-block-bg:          #fff;
 
-@color-good-corner-new-bg: #e24602;
-@color-good-corner-hot-bg: #faef03;
-@color-good-corner-new-text: @color-secondary-text--light;
-@color-good-corner-hot-text: @color-secondary-text--dark;
-@color-good-wrapper-bg: #fff;
+//Goods block colors
+@color-good-corner-new-bg:      #e24602;
+@color-good-corner-hot-bg:      #faef03;
+@color-good-wrapper-bg:         #fff;
+@color-old-price-text:          #e24602;
 
-@color-old-price-text: #e24602;
-
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.font(@fontName; @urlName:@fontName; @weight:normal; 
+//Mixin for colors including
+.fontInclude(@fontName; @urlName:@fontName; @weight:400; 
   @style:normal) {
   font-family: '@{fontName}';
   src: url('../fonts/@{fontName}/@{urlName}.ttf') format('truetype'),
@@ -61,6 +50,7 @@
   font-style: @style;
 }
 
+//Font-family variables
 @roboto: 'Roboto';
 @robotoBlack: '@{roboto}-Black';
 @robotoBlackItalic: '@{robotoBlack}Italic';
@@ -73,36 +63,60 @@
 @ralewayExtraBold: '@{raleway}-ExtraBold';
 @ralewayHeavy: '@{raleway}-Heavy';
 
+//Fonts including
 @font-face {
-  .font(@roboto; @robotoBlack; 900);
+  .fontInclude(@roboto; @robotoBlack; 900);
 }
 
 @font-face {
-  .font(@roboto; @robotoBlackItalic; 900; italic);
+  .fontInclude(@roboto; @robotoBlackItalic; 900; italic);
 }
 
 @font-face {
-  .font(@roboto; @robotoBold; 700);
+  .fontInclude(@roboto; @robotoBold; 700);
 }
 
 @font-face {
-  .font(@roboto; @robotoRegular; 400);
+  .fontInclude(@roboto; @robotoRegular);
 }
 
 @font-face {
-  .font(@raleway; @ralewayRegular; 400);
+  .fontInclude(@raleway; @ralewayRegular);
 }
 
 @font-face {
-  .font(@raleway; @ralewayBold; 600);
+  .fontInclude(@raleway; @ralewayBold; 600);
 }
 
 @font-face {
-  .font(@raleway; @ralewayExtraBold; 700);
+  .fontInclude(@raleway; @ralewayExtraBold; 700);
 }
 
 @font-face {
-  .font(@raleway; @ralewayHeavy; 800);
+  .fontInclude(@raleway; @ralewayHeavy; 800);
+}
+
+//Mixin for 'display:flex' prefixes
+.displayFlex() {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;  
+}
+
+//Fonts mixin
+.font(@fontName; @weight:400;  @size:14px; @style:normal;) {
+  font-family: '@{fontName}';   
+  font-weight: @weight;
+  font-style: @style;
+  font-size: @size;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
@@ -130,11 +144,7 @@ header {
     width: 150px;
     float: right;
     margin-top: 26px;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
+    .displayFlex;
     justify-content: space-between;
   }
 }
@@ -150,10 +160,8 @@ header {
 
     &:nth-child(1) {
       text-transform: uppercase;
-      font-family: @raleway; // не тот шрифт из-за того что болд и экстраболд идентичны 
+      .font(@raleway, 700, 48px);
       color: @color-header-text;
-      font-size: 48px;
-      font-weight: 700;
       line-height: 34px;
       text-align: left;
     }
@@ -174,7 +182,7 @@ header {
     width: 124px;
     height: 49px;
     font-family: @raleway; 
-    color: @color-header-btn-text;
+    color: @color-secondary-text--dark;
     font-size: 14px;
     font-weight: 800;
     text-transform: uppercase;
@@ -258,10 +266,10 @@ menu {
   li {
     &:nth-child(1) {
       padding: 0 0 0 36px;
-      color: @color-menu-header-text; 
+      color: @color-secondary-text--light; 
       height: 66px;
       line-height: 66px;
-      background-color: @color-menu-header-bg; 
+      background-color: @gray--darkest; 
     }
   } 
 
@@ -272,11 +280,11 @@ menu {
     padding: 0 0 0 36px;
     box-sizing: border-box;
     text-decoration: none;
-    color: @color-menu-text;
+    color: @color-secondary-text--dark;
 
     &:hover {
-      background-color: @color-menu-selected-item-bg;
-      color: @color-menu-selected-item-text;
+      background-color: @gray--darkest;
+      color: @color-secondary-text--light;
     }      
   }
 }
@@ -291,11 +299,7 @@ menu {
   width: 870px;
   background-color: @gray--lighten;
   height: 760px;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  .displayFlex;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -322,11 +326,7 @@ menu {
 
 .picturesWrapper {
   height: 680px;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  .displayFlex;
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -354,11 +354,7 @@ menu {
 }
 
 .pictureText {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  .displayFlex;
   justify-content: space-between;
 }
 
@@ -411,11 +407,11 @@ menu {
 }
 
 .new {
-  color: @color-good-corner-new-text;
+  color: @color-secondary-text--light;
 }
 
 .hot {
-  color: @color-good-corner-hot-text;
+  color: @color-secondary-text--dark;
 }
 
 .clear {
@@ -504,11 +500,7 @@ menu {
 footer {
   height: 348px;
   background-color: @gray--dark;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  .displayFlex;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -525,7 +517,7 @@ footer {
       height: 30px;
       border: none;
       font-family: @roboto;
-      color:  @color-footer-placeholder-text;
+      color:  @color-main-text;
       font-size: 12px;
       font-weight: 700;
       line-height: 21px;
@@ -541,7 +533,7 @@ footer {
       border: none;
       box-sizing: border-box;
       font-family: @roboto;
-      color:  @color-footer-btn-text;
+      color:  @color-footer-text;
       font-size: 12px;
       line-height: 21px;
       text-align: left;
@@ -583,28 +575,20 @@ footer {
 .lowerFooterWrapper {
   margin: 0 auto;
   width: 1200px;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  .displayFlex;
   justify-content: space-between;
 
   div {
     width: 223px;
     float: right;
     margin-top: 20px;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
+    .displayFlex;
     justify-content: space-between;
   }
 
   p {
     font-family: @roboto; 
-    color:  @color-footer-text-dark;
+    color:  @color-footer-text--dark;
     font-size: 12px;
     font-weight: 400;
     line-height: 21.6px;
