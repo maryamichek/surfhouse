@@ -106,11 +106,11 @@
 }
 
 //Fonts mixin
-.font(@fontName; @weight:400;  @size:14px; @style:normal;) {
-  font-family: '@{fontName}';   
+.font(@fontName; @size:14px; @weight:400; @style:normal) {
+  font-family: '@{fontName}'; 
+  font-size: @size;  
   font-weight: @weight;
   font-style: @style;
-  font-size: @size;
 }
 
 
@@ -121,6 +121,7 @@
 
 html, body {
   height: 100%;
+  //displayFlex();
 }
 
 body {
@@ -160,17 +161,15 @@ header {
 
     &:nth-child(1) {
       text-transform: uppercase;
-      .font(@raleway, 700, 48px);
+      .font(@raleway, 48px, 700);
       color: @color-header-text;
       line-height: 34px;
       text-align: left;
     }
 
     &:nth-child(2) {
-      font-family: @raleway;
+      .font(@raleway, 18px);
       color: @color-header-text;
-      font-size: 18px;
-      font-weight: 400;
       line-height: 24px;
       text-align: left;
       margin-top: 5px;
@@ -181,10 +180,8 @@ header {
     background-color: @color-header-btn-bg;
     width: 124px;
     height: 49px;
-    font-family: @raleway; 
+    .font(@raleway, 14px, 800);
     color: @color-secondary-text--dark;
-    font-size: 14px;
-    font-weight: 800;
     text-transform: uppercase;
     border-style: none;
     margin: 57px 0 0;
@@ -196,14 +193,13 @@ header {
   height: 300px;
   width: 270px;
   background-color: @color-header-welcome-block-bg;
-  font-family: @raleway; 
   color: @color-main-text;
-  font-weight: 600;
   margin-top: 80px;
 
   p {
 
     &:nth-child(1) {
+      .font(@raleway, 30px, 600);
       padding: 60px 10px 10px 20px;
       text-transform: uppercase;
       font-size: 30px;
@@ -212,11 +208,10 @@ header {
     }
 
     &:nth-child(2) {
+      .font(@raleway, 18px, 600, italic);
       padding: 20px 10px 10px 20px;
-      font-size: 18px;
       line-height: 14px;
       text-align: left;
-      font-style: italic;
     }
   }
 }
@@ -238,15 +233,12 @@ aside {
     margin: 30px 0 0 0; 
 
     p {
-      font-family: @raleway; //не работает
+      .font(@raleway, 36px, 800, italic);
       color:  @gray--darkest;
-      font-size: 36px;
-      font-weight: 800;
       line-height: 36px;
       text-align: left;
       text-transform: uppercase;
       padding: 140px 0 0 140px;
-      font-style: italic;
     }
   }
 }
@@ -256,10 +248,8 @@ menu {
   width: 100%;
   height: 475px;
   list-style: none;
-  font-family: @roboto; 
-  font-size: 14px;
+  .font(@roboto, 14px, 900);
   line-height: 36px;
-  font-weight: 900;
   text-align: left;
   text-transform: uppercase;
 
@@ -293,6 +283,8 @@ menu {
   width: 870px;
   float: right;
   margin: -20px 165px 0 0;
+  // .displayFlex;
+  // flex-direction: column; // ЗАМЕНИТЬ НА МИКСИН!!!!!
 }
 
 .goods {
@@ -307,11 +299,8 @@ menu {
   flex-direction: column; 
 
   & > p {
-    font-family: @roboto;
+    .font(@roboto, 22px, 900, italic);
     color: @color-main-text;
-    font-size: 22px;
-    font-weight: 900;
-    font-style: italic;
     text-align: left;
     text-transform: uppercase;
     line-height: 80px;
@@ -359,10 +348,8 @@ menu {
 }
 
 .pictureTextTitle, .picturePrice {
-  font-family: @roboto; 
+  .font(@roboto, 18px, 900, italic);
   color: @color-main-text;
-  font-weight: 900;
-  font-style: italic;
 } 
 
 .pictureTextTitle {
@@ -373,17 +360,13 @@ menu {
 }
 
 .picturePrice {
-  font-size: 18px;
   text-align: right;
   padding: 24px 10px 0 0;
 }
 
 .pictureOldPrice {
-  font-family: @roboto; 
+  .font(@roboto, 14px, 900, italic);
   color: @color-old-price-text;
-  font-size: 14px;
-  font-weight: 900;
-  font-style: italic;
   text-align: right;
   text-decoration: line-through;
 }
@@ -394,9 +377,7 @@ menu {
   }
 
   p {
-    font-family: @roboto; 
-    font-size: 9px; 
-    font-weight: 400;
+    .font(@roboto, 9px);
     text-align: left;
     margin-top: 10px;
     text-transform: uppercase;
@@ -458,11 +439,8 @@ menu {
     }
 
     & > p {
-      font-family: @roboto; 
+      .font(@roboto, 22px, 900, italic);
       color: @gray--darkest;
-      font-size: 22px;
-      font-weight: 900;
-      font-style: italic;
       text-align: left;
       margin: 0 0 0 8px;
       display: inline-block; 
@@ -511,33 +489,34 @@ footer {
     padding: 17px 0 0 0;
     margin: 0px;
 
-    input[type="email"] {
-      background-color: @color-footer-placeholder-bg;
-      width: 180px;
-      height: 30px;
-      border: none;
-      font-family: @roboto;
-      color:  @color-main-text;
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 21px;
-      text-align: left;
-      padding: 0 0 0 21px;
-      box-sizing: border-box;
-    }
+    input {
 
-    input[type="submit"] {
-      background-color: @color-footer-btn-bg;
-      width: 71px;
-      height: 30px;
-      border: none;
-      box-sizing: border-box;
-      font-family: @roboto;
-      color:  @color-footer-text;
-      font-size: 12px;
-      line-height: 21px;
-      text-align: left;
-      text-align: center;
+      .font(@roboto, 12px);
+
+      &[type="email"] {
+        font-weight: 700;
+        background-color: @color-footer-placeholder-bg;
+        width: 180px;
+        height: 30px;
+        border: none;
+        color:  @color-main-text;
+        line-height: 21px;
+        text-align: left;
+        padding: 0 0 0 21px;
+        box-sizing: border-box;
+      }
+
+      &[type="submit"] {
+        background-color: @color-footer-btn-bg;
+        width: 71px;
+        height: 30px;
+        border: none;
+        box-sizing: border-box;
+        color:  @color-footer-text;
+        line-height: 21px;
+        text-align: left;
+        text-align: center;
+      }
     }
   }
 }
@@ -587,10 +566,8 @@ footer {
   }
 
   p {
-    font-family: @roboto; 
+    .font(@roboto, 12px);
     color:  @color-footer-text--dark;
-    font-size: 12px;
-    font-weight: 400;
     line-height: 21.6px;
     text-align: left;
     margin: 21px 0 0 0;
@@ -604,10 +581,8 @@ footer {
     margin-top: 30px;
 
     a {
-      font-family: @roboto; 
+      .font(@roboto, 12px, 400);
       color: @color-footer-text;
-      font-size: 12px;
-      font-weight: 400;
       line-height: 18px;
       text-align: left;
       text-decoration: none;
@@ -616,18 +591,14 @@ footer {
 }
 
 .navTitle {
-  font-family: @raleway;
+  .font(@raleway, 18px, 700);
   color: @color-footer-text;
-  font-size: 18px;
-  font-weight: 700;
   text-align: left;
 }
 
 .emailInfo {
-  font-family: @roboto;
+  .font(@roboto, 12px);
   color: @color-footer-text;
-  font-size: 12px; 
-  font-weight: 400;
   line-height: 12px;
   text-align: left;
   width: 195px;
@@ -649,10 +620,8 @@ footer {
 }
 
 .aboutInfo {
-  font-family: @roboto;
+  .font(@roboto, 12px);
   color: @color-footer-text;
-  font-size: 12px; 
-  font-weight: 400;
   line-height: 12px; 
   text-align: left;
   width: 200px;
@@ -669,26 +638,20 @@ footer {
 }
 
 .phoneEmailLabel {
-  font-family: @roboto;
+  .font(@roboto);
   color: @color-footer-text;
-  font-size: 14px;
-  font-weight: 400;
   text-align: left;
 }
 
 .phoneInfo {
-  font-family: @roboto;
+  .font(@roboto);  
   color: @color-footer-text;
-  font-size: 14px; 
-  font-weight: 400;
   text-align: left;
 }
 
 .email {
-  font-family: @roboto;
+  .font(@roboto);
   color: @color-footer-email-text;
-  font-size: 14px; 
-  font-weight: 400;
   text-align: left;
 }
 
