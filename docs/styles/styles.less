@@ -105,14 +105,6 @@
   display: flex;  
 }
 
-//Fonts mixin
-.font(@fontName; @size:14px; @weight:400; @style:normal) {
-  font-family: '@{fontName}'; 
-  font-size: @size;  
-  font-weight: @weight;
-  font-style: @style;
-}
-
 
 * {
   margin: 0;
@@ -121,8 +113,8 @@
 
 html, body {
   height: 100%;
-  //displayFlex();
 }
+
 
 body {
   background-color: @gray--light;
@@ -161,14 +153,14 @@ header {
 
     &:nth-child(1) {
       text-transform: uppercase;
-      .font(@raleway, 48px, 700);
+      font: 700 48px @raleway;
       color: @color-header-text;
       line-height: 34px;
       text-align: left;
     }
 
     &:nth-child(2) {
-      .font(@raleway, 18px);
+      font: 400 18px @raleway;
       color: @color-header-text;
       line-height: 24px;
       text-align: left;
@@ -180,7 +172,7 @@ header {
     background-color: @color-header-btn-bg;
     width: 124px;
     height: 49px;
-    .font(@raleway, 14px, 800);
+    font: 800 14px @raleway;
     color: @color-secondary-text--dark;
     text-transform: uppercase;
     border-style: none;
@@ -199,7 +191,7 @@ header {
   p {
 
     &:nth-child(1) {
-      .font(@raleway, 30px, 600);
+      font: 600 30px @raleway;
       padding: 60px 10px 10px 20px;
       text-transform: uppercase;
       font-size: 30px;
@@ -208,7 +200,7 @@ header {
     }
 
     &:nth-child(2) {
-      .font(@raleway, 18px, 600, italic);
+      font: italic 600 18px @raleway;
       padding: 20px 10px 10px 20px;
       line-height: 14px;
       text-align: left;
@@ -233,7 +225,7 @@ aside {
     margin: 30px 0 0 0; 
 
     p {
-      .font(@raleway, 36px, 800, italic);
+      font: italic 800 36px @raleway;
       color:  @gray--darkest;
       line-height: 36px;
       text-align: left;
@@ -248,7 +240,7 @@ menu {
   width: 100%;
   height: 475px;
   list-style: none;
-  .font(@roboto, 14px, 900);
+  font: 900 14px @roboto;
   line-height: 36px;
   text-align: left;
   text-transform: uppercase;
@@ -283,8 +275,6 @@ menu {
   width: 870px;
   float: right;
   margin: -20px 165px 0 0;
-  // .displayFlex;
-  // flex-direction: column; // ЗАМЕНИТЬ НА МИКСИН!!!!!
 }
 
 .goods {
@@ -299,7 +289,7 @@ menu {
   flex-direction: column; 
 
   & > p {
-    .font(@roboto, 22px, 900, italic);
+    font: italic 900 22px @roboto;
     color: @color-main-text;
     text-align: left;
     text-transform: uppercase;
@@ -348,7 +338,7 @@ menu {
 }
 
 .pictureTextTitle, .picturePrice {
-  .font(@roboto, 18px, 900, italic);
+  font: italic 900 18px @roboto;
   color: @color-main-text;
 } 
 
@@ -365,7 +355,7 @@ menu {
 }
 
 .pictureOldPrice {
-  .font(@roboto, 14px, 900, italic);
+  font: italic 900 14px @roboto;
   color: @color-old-price-text;
   text-align: right;
   text-decoration: line-through;
@@ -377,7 +367,7 @@ menu {
   }
 
   p {
-    .font(@roboto, 9px);
+    font: 400 9px @roboto;
     text-align: left;
     margin-top: 10px;
     text-transform: uppercase;
@@ -439,7 +429,7 @@ menu {
     }
 
     & > p {
-      .font(@roboto, 22px, 900, italic);
+      font: italic 900 22px @roboto;
       color: @gray--darkest;
       text-align: left;
       margin: 0 0 0 8px;
@@ -490,8 +480,8 @@ footer {
     margin: 0px;
 
     input {
-
-      .font(@roboto, 12px);
+      
+      font: 400 12px @roboto;
 
       &[type="email"] {
         font-weight: 700;
@@ -566,7 +556,7 @@ footer {
   }
 
   p {
-    .font(@roboto, 12px);
+    font: 400 12px @roboto;
     color:  @color-footer-text--dark;
     line-height: 21.6px;
     text-align: left;
@@ -581,7 +571,7 @@ footer {
     margin-top: 30px;
 
     a {
-      .font(@roboto, 12px, 400);
+      font: 400 12px @roboto;
       color: @color-footer-text;
       line-height: 18px;
       text-align: left;
@@ -591,13 +581,13 @@ footer {
 }
 
 .navTitle {
-  .font(@raleway, 18px, 700);
+  font: 700 18px @raleway;
   color: @color-footer-text;
   text-align: left;
 }
 
 .emailInfo {
-  .font(@roboto, 12px);
+  font: 400 12px @roboto;
   color: @color-footer-text;
   line-height: 12px;
   text-align: left;
@@ -620,7 +610,7 @@ footer {
 }
 
 .aboutInfo {
-  .font(@roboto, 12px);
+  font: 400 12px @roboto;
   color: @color-footer-text;
   line-height: 12px; 
   text-align: left;
@@ -638,19 +628,19 @@ footer {
 }
 
 .phoneEmailLabel {
-  .font(@roboto);
+  font: 400 14px @roboto;
   color: @color-footer-text;
   text-align: left;
 }
 
 .phoneInfo {
-  .font(@roboto);  
+  font: 400 14px @roboto; 
   color: @color-footer-text;
   text-align: left;
 }
 
 .email {
-  .font(@roboto);
+  font: 400 14px @roboto;
   color: @color-footer-email-text;
   text-align: left;
 }
