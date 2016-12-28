@@ -1,8 +1,4 @@
 {
   "pawn": "♟",
-  "castle": "♜",
-  "knight": "♞",
-  "bishop": "♝",
-  "king": "♛",
-  "queen": "♚"
+  "secondLineFigures": ["♜", "♞", "♝", "♛", "♚"]
 }
